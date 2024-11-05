@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { dateFormat } from "../utilis"
+import { dateFormat } from "../utils"
 
 const ArticleCard = ({article}) => {
     const formattedDate = dateFormat(article.created_at)
