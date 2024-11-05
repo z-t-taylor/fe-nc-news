@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import { getSingleArticle } from '../api'
 import { useParams } from 'react-router-dom'
 import { dateFormat } from '../utils'
+import CommentsList from './CommentsList'
 
 const SingleArticle = () => {
     const {article_id} = useParams()
@@ -48,6 +49,9 @@ const SingleArticle = () => {
             <div id='votes_and_comments_count'>
                 <p className="votes">Votes: {article.votes}</p>
                 <p className='comment_count'>Comments: {article.comment_count}</p>
+            </div>
+            <div>
+                <CommentsList />
             </div>
         </section>
   )
