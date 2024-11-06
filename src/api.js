@@ -25,6 +25,21 @@ export const getComments = (article_id) => {
     })
 }
 
+export const postCommentByArticleId = (article_id, commentData) => {
+    const {author, body, created_at, votes} = commentData
+    return api.post(`/articles/${article_id}/comments`, {
+        username: author, 
+        body: body,
+        created_at: created_at,
+        votes: votes,
+    })
+    .then(({data}) => {
+        return data.comments
+    })
+}
+
+//Votes on an Article
+
 export const patchArticleVotes = (article_id, votes) => {
     return api.patch(`/articles/${article_id}`, {inc_votes: votes}).then(({data}) => {
         return data.article

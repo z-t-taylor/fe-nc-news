@@ -40,6 +40,7 @@ h1{
 }
 
 .nav_elements{
+  display: flexbox;
   text-decoration: none;
   color: black;
   margin: 5px;
@@ -52,6 +53,15 @@ h1{
   color: black;
   font-weight: 700;
   text-decoration: underline rgb(202, 30, 0) 0.2em;
+}
+
+#sign_in_btn{
+  background-color: rgb(202, 30, 0);
+  color: white;
+  border-width: 0.5px;
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin-left: 3rem;
 }
 
 .article_card{
@@ -164,6 +174,7 @@ h1{
 }
 
 #article_body_wrap{
+  width: 65%;
   margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
@@ -184,7 +195,7 @@ h1{
   line-height: 110%;
 }
 
-#article_body_border{
+.article_body_border{
   border-bottom: solid black;
 }
 
@@ -208,15 +219,22 @@ h1{
   font-weight: 700;
 }
 
-/* article comments and vote on article section */
+/* article comments*/
 
 .comments_section_wrap{
-  margin-top: 3rem;
-  border: solid black;
+  border-left: solid black;
+  border-right: solid black;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .comments_section_wrap h3{
   margin-left: 1rem;
+  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -231,7 +249,13 @@ h1{
 
 .comment_card:last-child{
   border: none;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.bottom_border{
+  border-bottom: solid rgb(202, 30, 0);
+  border-width: 2px;
+  margin-bottom: 5rem;
 }
 
 #comments_header_wrap{
@@ -258,6 +282,53 @@ h1{
   margin-left: 6rem;
   text-align: left;
 }
+
+.comment_form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: solid black;
+  margin-bottom: 1rem;
+  padding: 10px;
+}
+
+.comment_form button{
+  width: 65px;
+  background-color: rgb(202, 30, 0);
+  color: white;
+  border-width: 0.5px;
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin-left: auto;
+  margin-top: 0.5rem;
+}
+
+textarea{
+    justify-content: center;
+    width: auto;
+    height: 8rem;
+    padding: 1rem;
+    resize: none;
+    border-radius: 10px;
+}
+
+textarea::-webkit-input-placeholder{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#comments_section_border{
+  border-top: solid black;
+  padding: 0;
+  margin-top: 3rem;
+}
+
+.comment_form label{
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* votes */
 
 .vote_change{
   display: flex;
@@ -298,3 +369,4 @@ h1{
 #vote_count span{
   font-weight: 700;
 }
+
