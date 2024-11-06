@@ -30,7 +30,7 @@ const CommentsList = () => {
     }
     
     if(isError){
-        return<p>Article not found</p>
+        return<p>Comment not found</p>
     }
     return (
         <section className='comments_section_wrap'>

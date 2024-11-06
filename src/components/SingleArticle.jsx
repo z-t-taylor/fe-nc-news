@@ -3,6 +3,7 @@ import { getSingleArticle } from '../api'
 import { useParams } from 'react-router-dom'
 import { dateFormat } from '../utils'
 import CommentsList from './CommentsList'
+import UpdateArticleVotes from './UpdateArticleVotes'
 
 const SingleArticle = () => {
     const {article_id} = useParams()
@@ -12,7 +13,7 @@ const SingleArticle = () => {
     
     useEffect(() => {
         setIsLoading(true)
-        
+
         getSingleArticle(article_id)
         .then((articleData) => {
             setArticle(articleData)
@@ -47,8 +48,8 @@ const SingleArticle = () => {
             </div>
             <div id='article_body_border'></div>
             <div id='votes_and_comments_count'>
-                <p className="votes">Votes: {article.votes}</p>
-                <p className='comment_count'>Comments: {article.comment_count}</p>
+                <p className='comment_count'>Comments: <span>{article.comment_count}</span></p>
+                {article_id && <UpdateArticleVotes id={article_id}/>}
             </div>
             <div>
                 <CommentsList />
