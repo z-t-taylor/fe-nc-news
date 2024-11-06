@@ -197,7 +197,18 @@ h1{
   margin-right: 1rem;
 }
 
-/* article comments section */
+.comment_count{
+  letter-spacing:0.7px;
+}
+
+.comment_count span{
+  background-color: rgb(245, 226, 226);
+  padding: 0 8px 0 8px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* article comments and vote on article section */
 
 .comments_section_wrap{
   margin-top: 3rem;
@@ -248,3 +259,42 @@ h1{
   text-align: left;
 }
 
+.vote_change{
+  display: flex;
+  flex-direction: row;
+  gap: 0.2rem;
+}
+
+.vote_change button{
+  border-radius: 5px;
+  background-color: white;
+  color: rgb(202, 30, 0);
+  font-size: 25px;
+  font-family: 'Varela Round', sans-serif;
+  border: none;
+  border-width: 0.5px;
+}
+
+.vote_change button:hover{
+  color: rgb(100, 17, 3);
+}
+
+#upVote {
+  transform: rotate(180deg);
+  margin-top: 4px;
+}
+
+#downVote {
+  margin-bottom: 4px;
+}
+
+#vote_count{
+  background-color: rgb(245, 226, 226);
+  padding: 0 8px 0 8px;
+  border-radius: 8px;
+  letter-spacing:0.7px;
+}
+
+#vote_count span{
+  font-weight: 700;
+}
