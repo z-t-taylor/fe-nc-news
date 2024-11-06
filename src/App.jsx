@@ -4,17 +4,19 @@ import Header from './components/Header'
 import Home from './components/Home'
 import ArticlesList from './components/ArticlesList'
 import SingleArticle from './components/SingleArticle'
+import { UserProvider } from './contexts/userContext'
 
 function App() {
-
   return (
     <>
-      <Header/>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/articles' element={<ArticlesList/>}/>
-        <Route path='/articles/:article_id' element={<SingleArticle />} />
-      </Routes>
+      <UserProvider>
+        <Header/>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/articles' element={<ArticlesList/>}/>
+          <Route path='/articles/:article_id' element={<SingleArticle />} />
+        </Routes>
+      </UserProvider>
     </>
   )
 }

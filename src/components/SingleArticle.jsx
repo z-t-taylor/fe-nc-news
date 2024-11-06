@@ -46,13 +46,13 @@ const SingleArticle = () => {
             <div id='article_body_wrap'>
             <p id='article_body'>{article.body}</p>
             </div>
-            <div id='article_body_border'></div>
+            <div className='article_body_border'></div>
             <div id='votes_and_comments_count'>
                 <p className='comment_count'>Comments: <span>{article.comment_count}</span></p>
                 {article_id && <UpdateArticleVotes id={article_id}/>}
             </div>
             <div>
-                <CommentsList />
+                <CommentsList article_id={article_id}/>
             </div>
         </section>
   )
