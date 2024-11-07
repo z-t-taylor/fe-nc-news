@@ -11,6 +11,7 @@ const Header = () => {
         <nav>
             <Link to="/" className='nav_elements'>Home</Link>
             <Link to="/articles" className='nav_elements'>Articles</Link>
+            <Link to="/topics" className='nav_elements'>Topics</Link>
             <button id="sign_in_btn" onClick={toggleLogin}>{isSignedIn ? "Sign out" : "Sign in"}</button>
         </nav>
     </header>
