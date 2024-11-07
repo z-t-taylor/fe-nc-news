@@ -1,6 +1,11 @@
 import { dateFormat } from "../utils"
+import { useContext } from "react"
+import { UserContext } from "../contexts/userContext"
+import DeleteComment from "./DeleteComment"
 
-const CommentCard = ({comment}) => {
+const CommentCard = ({comment, comments, setComments}) => {
+    const {user} = useContext(UserContext)
+
     const formattedDate = dateFormat(comment.created_at)
     return (
         <div className="comment_card">
@@ -10,6 +15,7 @@ const CommentCard = ({comment}) => {
             </div>
             <p id="comment_body">{comment.body}</p>
             <p className="votes">Votes: {comment.votes}</p>
+            {comment.author === user.username ? <DeleteComment comment={comment} comments={comments} setComments={setComments}/> : null}
         </div>
     )
 }

@@ -38,6 +38,10 @@ export const postCommentByArticleId = (article_id, commentData) => {
     })
 }
 
+export const deleteCommentByCommentId = (comment_id) => {
+    return api.delete(`/comments/${comment_id}`)
+}
+
 //Votes on an Article
 
 export const patchArticleVotes = (article_id, votes) => {

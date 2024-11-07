@@ -42,7 +42,7 @@ const CommentsList = () => {
             {!isSignedIn ? "Sign in to post a comment": <PostComment key={comments.comment_id} article_id={article_id} setComments={setComments}/>}
             <div>
                 {comments.map((comment, index) => {
-                    return <CommentCard key={comment.comment_id || index} comment={comment}/>
+                    return <CommentCard key={comment.comment_id || index} comment={comment} comments={comments} setComments={setComments}/>
                 })}
             </div>
         </section>
