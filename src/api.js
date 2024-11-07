@@ -5,7 +5,16 @@ const api = axios.create({
 })
 
 //Articles
-export const getArticles = () => {
+export const getArticles = (topic) => {
+    if(topic){
+        return api.get("/articles", {
+            params: {
+                topic: topic
+            }
+        }).then(({data}) => {
+            return data.articles
+        })
+    }
     return api.get("/articles").then(({data}) => {
         return data.articles;
     })
@@ -47,5 +56,23 @@ export const deleteCommentByCommentId = (comment_id) => {
 export const patchArticleVotes = (article_id, votes) => {
     return api.patch(`/articles/${article_id}`, {inc_votes: votes}).then(({data}) => {
         return data.article
+    })
+}
+
+//Topics
+
+export const getTopics = () => {
+    return api.get("/topics").then(({data}) => {
+        return data.topics
+    })
+}
+
+export const getArticlesByTopic = (topic) => {
+    return api.get("/articles", {
+        params: {
+            topic: topic.slug
+        }
+    }).then(({data}) => {
+        return data.articles
     })
 }

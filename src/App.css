@@ -390,3 +390,14 @@ textarea::-webkit-input-placeholder{
   font-weight: 700;
 }
 
+/* topics */
+
+#topic_card_slug{
+  color: rgb(202, 30, 0);
+  font-size: 2rem;
+  margin-bottom: -5px;
+}
+
+#topic_description{
+  margin-bottom: 3rem;
+}

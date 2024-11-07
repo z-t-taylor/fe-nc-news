@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { getArticles } from '../api'
 import ArticleCard from './ArticleCard'
 
@@ -7,11 +8,14 @@ const ArticlesList = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
     const [morePages, setMorePages] = useState(5)
+    const [searchParams] = useSearchParams()
+
+    const topic = searchParams.get("topic")
 
     useEffect(() => {
         setIsLoading(true)
 
-        getArticles()
+        getArticles(topic)
         .then((articles) => {
             setArticles(articles)
             setIsLoading(false)
@@ -21,7 +25,7 @@ const ArticlesList = () => {
             setIsError(true)
             setIsLoading(false)
         })
-    }, [])
+    }, [topic])
 
     if(isLoading){
         return<p>Loading..</p>
@@ -33,7 +37,7 @@ const ArticlesList = () => {
 
     return (
         <section className='articles_list'>
-            <h2>All Articles:</h2>
+            <h2>{topic ? `${topic}:`:"All Articles:"}</h2>
             <ol>
                 {articles.slice(0, morePages ? morePages :articles.length).map((article) => {
                     return <ArticleCard key={article.article_id} article={article} />
