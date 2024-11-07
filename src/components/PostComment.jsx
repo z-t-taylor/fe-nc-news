@@ -38,7 +38,7 @@ const PostComment = ({article_id, setComments}) => {
                 }, 3000)
                 setIsLoading(false)
             }) 
-        }, 1000);
+        }, 500);
     }
 
     if(isError){
@@ -59,7 +59,7 @@ const PostComment = ({article_id, setComments}) => {
                 required
                 />
                 <div></div>
-                <button id='comment_btn' type="submit" disabled={isLoading}>{isLoading ? "submitting..." : "submit"}</button>
+                <button id='comment_btn' type="submit" disabled={isLoading}>{isLoading ? "Sending.." : "Submit"}</button>
             </form>
         </div>
     )
