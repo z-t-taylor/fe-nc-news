@@ -36,6 +36,8 @@ const CommentsList = () => {
         return<p>Comment not found</p>
     }
     return (
+        <div>
+            <p className='comment_count'>Comments: <span>{comments.length}</span></p>
         <div id='comments_section_border'>
         <section className='comments_section_wrap'>
             <h3>Comments:</h3>
@@ -47,6 +49,7 @@ const CommentsList = () => {
             </div>
         </section>
         <div className='bottom_border'></div>
+        </div>
         </div>
     )
 }

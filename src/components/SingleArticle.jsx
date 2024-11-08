@@ -47,8 +47,7 @@ const SingleArticle = () => {
             <p id='article_body'>{article.body}</p>
             </div>
             <div className='article_body_border'></div>
-            <div id='votes_and_comments_count'>
-                <p className='comment_count'>Comments: <span>{article.comment_count}</span></p>
+            <div id='votes'>
                 {article_id && <UpdateArticleVotes id={article_id}/>}
             </div>
             <div>
