@@ -32,7 +32,7 @@ if(isLoading){
 
     return (
         <div>
-            <h2>Topics:</h2>
+            <h2 id="topics_heading">Topics:</h2>
             <ol>
                 {topics.map((topic) => (<TopicCard key={topic.slug} topic={topic} value={topic.slug}/>))}
             </ol>

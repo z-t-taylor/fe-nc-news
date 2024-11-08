@@ -8,7 +8,6 @@
 h2 {
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 50px;
-  margin-left: 50px;
 }
 
 p {
@@ -199,7 +198,7 @@ h1{
   border-bottom: solid black;
 }
 
-#votes_and_comments_count{
+#votes{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -208,11 +207,44 @@ h1{
   margin-right: 1rem;
 }
 
-.comment_count{
-  letter-spacing:0.7px;
+#container_of_order{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 5px;
+  margin-right: 2rem;
 }
 
-.comment_count span{
+#container_of_order label{
+  margin-right: 3px;
+}
+
+#articles_title_heading{
+  margin-left: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#topics_heading{
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#votes_comments{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-right: 3rem;
+}
+.comments span{
+  background-color: rgb(245, 226, 226);
+  padding: 0 8px 0 8px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.votes_on_article span{
   background-color: rgb(245, 226, 226);
   padding: 0 8px 0 8px;
   border-radius: 8px;
@@ -221,6 +253,18 @@ h1{
 
 /* article comments*/
 
+.comment_count{
+  letter-spacing:0.7px;
+  margin-bottom: -2rem;
+  margin-left: 1rem;
+}
+
+.comment_count span{
+  background-color: rgb(245, 226, 226);
+  padding: 0 8px 0 8px;
+  border-radius: 8px;
+  font-weight: 700;
+}
 .comments_section_wrap{
   border-left: solid black;
   border-right: solid black;

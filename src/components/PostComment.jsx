@@ -23,22 +23,20 @@ const PostComment = ({article_id, setComments}) => {
         }
 
         setIsLoading(true)
-        setTimeout(() => {
-            postCommentByArticleId(article_id, newCommentInput)
-            .then(() => {
-                setComments((currComments) => [newCommentInput, ...currComments])
+        postCommentByArticleId(article_id, newCommentInput)
+        .then((response) => {
+            setComments((currComments) => [response, ...currComments])
+            setPostComment("")
+            setIsLoading(false)
+        })
+        .catch((err) => {
+            setIsError(true)
+            setTimeout(() => {
+                setIsError(false)
                 setPostComment("")
-                setIsLoading(false)
-            })
-            .catch((err) => {
-                setIsError(true)
-                setTimeout(() => {
-                    setIsError(false)
-                    setPostComment("")
-                }, 3000)
-                setIsLoading(false)
-            }) 
-        }, 500);
+            }, 3000)
+            setIsLoading(false)
+        }) 
     }
 
     if(isError){
@@ -59,7 +57,7 @@ const PostComment = ({article_id, setComments}) => {
                 required
                 />
                 <div></div>
-                <button id='comment_btn' type="submit" disabled={isLoading}>{isLoading ? "Sending.." : "Submit"}</button>
+                <button id='comment_btn' type="submit" disabled={isLoading}>{isLoading ? "Submitting.." : "Submit"}</button>
             </form>
         </div>
     )
