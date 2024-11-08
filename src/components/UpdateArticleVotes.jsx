@@ -37,7 +37,7 @@ const UpdateArticleVotes = ({id}) => {
     }
 
     if(isError){
-        return <p>Error, cannot update votes</p>
+        return <p className='inline_error_and_loading'>Error, cannot update votes</p>
     }
 
     return (

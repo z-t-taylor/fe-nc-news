@@ -27,11 +27,11 @@ const SingleArticle = () => {
     },[article_id])
     
     if(isLoading){
-        return<p>Loading..</p>
+        return<p className='inline_error_and_loading'>Loading..</p>
     }
     
     if(isError){
-        return<p>Article not found</p>
+        return<p className='inline_error_and_loading'>Article not found</p>
     }
     
     return (

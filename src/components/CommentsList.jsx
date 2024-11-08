@@ -29,11 +29,11 @@ const CommentsList = () => {
     },[article_id])
 
     if(isLoading){
-        return<p>Loading..</p>
+        return<p className='inline_error_and_loading'>Loading..</p>
     }
     
     if(isError){
-        return<p>Comment not found</p>
+        return<p className='inline_error_and_loading'>Comment not found</p>
     }
     return (
         <div>

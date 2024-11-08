@@ -6,6 +6,7 @@ const TopicsList = () => {
     const [topics, setTopics] = useState([])    
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
+    const [errorMessage, setErrorMessage] = useState('')
 
     useEffect(() => {
         setIsLoading(true)
@@ -23,11 +24,11 @@ const TopicsList = () => {
     }, [])
 
 if(isError){
-    return<p>Topics not found</p>
+    return<p className='inline_error_and_loading'>Topics not found</p>
 }
 
 if(isLoading){
-    return<p>Loading..</p>
+    return<p className='inline_error_and_loading'>Loading..</p>
 }
 
     return (
