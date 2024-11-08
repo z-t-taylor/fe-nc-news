@@ -6,6 +6,7 @@ import ArticlesList from './components/ArticlesList'
 import SingleArticle from './components/SingleArticle'
 import { UserProvider } from './contexts/userContext'
 import TopicsList from './components/TopicsList'
+import ErrorPath from './components/ErrorPath'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <UserProvider>
         <Header/>
         <Routes>
+          <Route path='*' element={<ErrorPath/>}/>
           <Route path='/' element={<Home/>}/>
           <Route path='/articles' element={<ArticlesList/>}/>
           <Route path='/articles/:article_id' element={<SingleArticle />} />
