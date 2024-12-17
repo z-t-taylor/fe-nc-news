@@ -2,7 +2,7 @@ import { dateFormat } from "../utils";
 import { useContext } from "react";
 import { UserContext } from "../contexts/userContext";
 import DeleteComment from "./DeleteComment";
-import UpdateCommentVotes from "./updateCommentVotes";
+import UpdateCommentVotes from "./UpdateCommentVotes";
 
 const CommentCard = ({ comment, comments, setComments }) => {
   const { user } = useContext(UserContext);
