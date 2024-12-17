@@ -12,7 +12,6 @@ const Header = () => {
       </Link>
       <nav>
         <div id="nav_link_wrap">
-          {/* <Link to="/" className='nav_elements'>Home</Link> */}
           <Link to="/articles" className="nav_elements">
             Articles
           </Link>
