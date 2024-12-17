@@ -1,21 +1,10 @@
-import { useEffect, useState } from "react";
-import { getSingleArticle, patchArticleVotes } from "../api";
+import { useState } from "react";
+import { patchCommentByCommentId } from "../api";
 
-const UpdateArticleVotes = ({ id }) => {
-  const [votes, setVotes] = useState(0);
+const UpdateCommentVotes = ({ commentId, initialVotes }) => {
+  const [votes, setVotes] = useState(initialVotes);
   const [voteStatus, setVoteStatus] = useState(null);
   const [isError, setIsError] = useState(false);
-
-  useEffect(() => {
-    getSingleArticle(id)
-      .then((article) => {
-        setVotes(article.votes);
-        setIsError(false);
-      })
-      .catch((err) => {
-        setIsError(true);
-      });
-  }, [id]);
 
   const handleVote = (voteType) => {
     let voteChange = 0;
@@ -41,7 +30,7 @@ const UpdateArticleVotes = ({ id }) => {
     setVotes((currVotes) => currVotes + voteChange);
     setIsError(false);
 
-    patchArticleVotes(id, voteChange).catch((err) => {
+    patchCommentByCommentId(commentId, voteChange).catch((err) => {
       setVotes((currVotes) => currVotes - voteChange);
       setVoteStatus((prevStatus) => prevStatus);
       setIsError(true);
@@ -85,4 +74,4 @@ const UpdateArticleVotes = ({ id }) => {
   );
 };
 
-export default UpdateArticleVotes;
+export default UpdateCommentVotes;
