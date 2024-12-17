@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Link to="/" id="header_home_link">
+      <Link to="/articles" id="header_home_link">
         <h1 id="main_header">^NC News</h1>
       </Link>
       <nav>
