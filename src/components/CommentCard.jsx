@@ -15,15 +15,12 @@ const CommentCard = ({ comment, comments, setComments }) => {
         <p id="comment_date">Posted: {formattedDate}</p>
       </div>
       <p id="comment_body">{comment.body}</p>
-      <p className="votes">
-        {" "}
-        {
-          <UpdateCommentVotes
-            commentId={comment._id}
-            initialVotes={comment.votes}
-          />
-        }
-      </p>
+      <div className="votes">
+        <UpdateCommentVotes
+          commentId={comment._id}
+          initialVotes={comment.votes}
+        />
+      </div>
 
       {comment.author === user.username ? (
         <DeleteComment

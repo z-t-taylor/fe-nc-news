@@ -39,7 +39,9 @@ const UpdateCommentVotes = ({ commentId, initialVotes }) => {
 
   if (isError) {
     return (
-      <p className="inline_error_and_loading">Error, cannot update votes</p>
+      <div>
+        <p className="inline_error_and_loading">Error, cannot update votes</p>
+      </div>
     );
   }
 

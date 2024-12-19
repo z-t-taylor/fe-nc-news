@@ -62,7 +62,7 @@ export const postCommentByArticleId = (article_id, commentData) => {
       votes: votes,
     })
     .then(({ data }) => {
-      return data.comments;
+      return data.comment || data;
     })
     .catch((err) => {
       if (err.response) {

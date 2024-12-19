@@ -43,11 +43,11 @@ const ArticlesList = () => {
   }, [searchParams]);
 
   if (isLoading) {
-    return <p className="inline_error_and_loading">Loading..</p>;
+    return <div className="inline_error_and_loading">Loading..</div>;
   }
 
   if (isError) {
-    return <p className="inline_error_and_loading">Articles not found</p>;
+    return <div className="inline_error_and_loading">Articles not found</div>;
   }
 
   return (
