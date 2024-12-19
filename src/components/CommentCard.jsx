@@ -17,7 +17,7 @@ const CommentCard = ({ comment, comments, setComments }) => {
       <p id="comment_body">{comment.body}</p>
       <div className="votes">
         <UpdateCommentVotes
-          commentId={comment._id}
+          commentId={comment.comment_id}
           initialVotes={comment.votes}
         />
       </div>

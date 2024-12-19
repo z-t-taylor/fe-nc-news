@@ -30,11 +30,15 @@ const UpdateCommentVotes = ({ commentId, initialVotes }) => {
     setVotes((currVotes) => currVotes + voteChange);
     setIsError(false);
 
-    patchCommentByCommentId(commentId, voteChange).catch((err) => {
-      setVotes((currVotes) => currVotes - voteChange);
-      setVoteStatus((prevStatus) => prevStatus);
-      setIsError(true);
-    });
+    patchCommentByCommentId(commentId, voteChange)
+      .then((updatedComment) => {
+        setVotes(updatedComment.votes);
+      })
+      .catch((err) => {
+        setVotes((currVotes) => currVotes - voteChange);
+        setVoteStatus(null);
+        setIsError(true);
+      });
   };
 
   if (isError) {

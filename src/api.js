@@ -71,11 +71,11 @@ export const postCommentByArticleId = (article_id, commentData) => {
     });
 };
 
-export const patchCommentByCommentId = (comment_id) => {
+export const patchCommentByCommentId = (comment_id, votes) => {
   return api
     .patch(`/comments/${comment_id}`, { inc_votes: votes })
     .then(({ data }) => {
-      return data.comment;
+      return data;
     })
     .catch((err) => {
       if (err.response) {
